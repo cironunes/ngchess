@@ -14,12 +14,17 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
             display: table-cell;
             width: 90px;
             height: 90px;
+            text-align: center;
+            vertical-align: middle;
         }
         .chessboard__square--white {
             background-color: #EF3445;
         }
         .chessboard__square--black {
             background-color: #900b1e;
+        }
+        .chessboard__piece {
+            width: 90px;
         }
 
 @media (max-width: $screen-xs-max) {
@@ -30,14 +35,20 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
         width: 40px;
         height: 40px;
     }
+    .chessboard__piece {
+        width: 40px;
+    }
 }
 
-@media (min-width: 600px) and (max-width: 720px) {
+@media (min-width: 600px) and (max-width: 800px) {
     .chessboard {
         width: 600px;
     }
     .chessboard__square {
         width: 75px;
         height: 75px;
+    }
+    .chessboard__piece {
+        width: 75px;
     }
 }
