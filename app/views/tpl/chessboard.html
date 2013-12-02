@@ -1,0 +1,14 @@
+<div class="chessboard">
+	<div class="chessboard__row" ng-repeat="row in rows">
+		<cn-square class="chessboard__square"
+		ng-class="{'chessboard__square--white': ($odd && row % 2 == 0) ||
+		($even && row % 2 != 0) }"
+		ng-repeat="col in cols">
+			<div ng-if="board[col + row]">
+				<cn-piece
+				type="{{board[col + row].split('')[1]}}"
+				team="{{board[col + row].split('')[0]}}"></cn-piece>
+			</div>
+		</cn-square>
+	</div>
+</div>

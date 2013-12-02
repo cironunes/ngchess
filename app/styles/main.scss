@@ -16,12 +16,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
             height: 90px;
             text-align: center;
             vertical-align: middle;
+            background-color: #900b1e;
         }
         .chessboard__square--white {
             background-color: #EF3445;
-        }
-        .chessboard__square--black {
-            background-color: #900b1e;
         }
         .chessboard__piece {
             width: 90px;
