@@ -39,13 +39,13 @@ angular.module('ngchessApp')
       f7: 'bP',
       g7: 'bP',
       h7: 'bP',
-  	};
+    };
     $scope.rows = '12345678'.split('').reverse();
     $scope.cols = 'abcdefgh'.split('');
 
     $scope.selected = false;
-    $scope.last;
-    $scope.selectedPiece;
+    $scope.last = '';
+    $scope.selectedPiece = '';
 
     $rootScope.$on('user:click', function($ev, data) {
       $scope.$apply(function() {
@@ -58,6 +58,6 @@ angular.module('ngchessApp')
         $scope.selected = !$scope.selected;
         $scope.last = data.col + data.row;
         $scope.selectedPiece = $scope.board[data.col + data.row];
-      })
+      });
     });
   });
