@@ -25,6 +25,11 @@ module.exports = function(config) {
       'app/views/tpl/*.html': 'ng-html2js'
     },
 
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/',
+      moduleName: 'chess'
+    },
+
     // list of files / patterns to exclude
     exclude: [],
 

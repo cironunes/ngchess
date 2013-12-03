@@ -4,7 +4,7 @@ describe('Controller: MainCtrl', function () {
 
   // load the controller's module
   beforeEach(module('ngchessApp'));
-  beforeEach(module('app/views/tpl/chessboard.html'));
+  beforeEach(module('chess'));
 
   var MainCtrl,
     rootScope,

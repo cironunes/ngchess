@@ -4,7 +4,7 @@ describe('Directive: chessboard', function () {
 
   // load the directive's module
   beforeEach(module('ngchessApp'));
-  beforeEach(module('app/views/tpl/chessboard.html'));
+  beforeEach(module('chess'));
 
   var element,
   	rootScope,
