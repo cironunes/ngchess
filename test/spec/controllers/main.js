@@ -49,6 +49,17 @@ describe('Controller: MainCtrl', function () {
       });
     });
 
+    describe('same square', function() {
+      it('should not clean the piece', function() {
+        var squares = chessboard[0].querySelectorAll('.chessboard__square');
+        var expected = 0;
+        squares[48].click();
+        squares[48].click();
+        expected = squares[48].querySelectorAll('img').length;
+        expect(expected).toBeGreaterThan(0);
+      });
+    })
+
   })
 
 });

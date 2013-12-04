@@ -50,7 +50,7 @@ angular.module('ngchessApp')
     $rootScope.$on('user:click', function($ev, data) {
       $scope.$apply(function() {
         var current = data.col + data.row;
-        if($scope.selected && $scope.selectedPiece) {
+        if($scope.selected && $scope.selectedPiece && $scope.last !== current) {
           $scope.board[current] = $scope.selectedPiece;
           delete $scope.board[$scope.last];
         }
