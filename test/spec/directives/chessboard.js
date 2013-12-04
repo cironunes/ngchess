@@ -7,14 +7,14 @@ describe('Directive: chessboard', function () {
   beforeEach(module('chess'));
 
   var element,
-  	rootScope,
+    rootScope,
     scope;
 
   beforeEach(inject(function ($rootScope, $compile) {
-  	rootScope = $rootScope;
+    rootScope = $rootScope;
     scope = rootScope.$new();
 
-  	scope.rows = '12345678'.split('');
+    scope.rows = '12345678'.split('');
     scope.cols = 'abcdefgh'.split('').reverse();
     scope.board = {
       a1: 'wR',
@@ -63,9 +63,9 @@ describe('Directive: chessboard', function () {
   }));
 
   it('#init', function () {
-  	var board = element[0].querySelectorAll('.chessboard').length;
-  	var squares = element[0].querySelectorAll('.chessboard__square').length;
-  	var pieces = element[0].querySelectorAll('.chessboard__piece').length;
+    var board = element[0].querySelectorAll('.chessboard').length;
+    var squares = element[0].querySelectorAll('.chessboard__square').length;
+    var pieces = element[0].querySelectorAll('.chessboard__piece').length;
 
     expect(board).toBe(1);
     expect(squares).toBe(64);

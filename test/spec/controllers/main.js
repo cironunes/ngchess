@@ -13,7 +13,7 @@ describe('Controller: MainCtrl', function () {
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, $compile) {
-    rootScope = $rootScope
+    rootScope = $rootScope;
     scope = rootScope.$new();
 
     MainCtrl = $controller('MainCtrl', {
@@ -45,7 +45,7 @@ describe('Controller: MainCtrl', function () {
         squares[40].click();
         expect(rootScope.$emit).toHaveBeenCalledWith('user:click', {row: '3', col: 'a'});
 
-        expect(scope.board['a3']).toBe('wP');
+        expect(scope.board.a3).toBe('wP');
       });
     });
 
@@ -58,8 +58,8 @@ describe('Controller: MainCtrl', function () {
         expected = squares[48].querySelectorAll('img').length;
         expect(expected).toBeGreaterThan(0);
       });
-    })
+    });
 
-  })
+  });
 
 });
