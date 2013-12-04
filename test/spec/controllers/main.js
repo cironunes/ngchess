@@ -34,15 +34,21 @@ describe('Controller: MainCtrl', function () {
     expect(scope.selected).toBe(false);
   });
 
-  it('#user:click', function() {
-    var squares = chessboard[0].querySelectorAll('.chessboard__square');
+  describe('click twice in squares', function() {
+    describe('different squares', function() {
+      it('should move the piece on the board', function() {
+        var squares = chessboard[0].querySelectorAll('.chessboard__square');
 
-    squares[48].click();
-    expect(rootScope.$emit).toHaveBeenCalledWith('user:click', {row: '2', col: 'a'});
+        squares[48].click();
+        expect(rootScope.$emit).toHaveBeenCalledWith('user:click', {row: '2', col: 'a'});
 
-    squares[40].click();
-    expect(rootScope.$emit).toHaveBeenCalledWith('user:click', {row: '3', col: 'a'});
+        squares[40].click();
+        expect(rootScope.$emit).toHaveBeenCalledWith('user:click', {row: '3', col: 'a'});
 
-    expect(scope.board['a3']).toBe('wP');
-  });
+        expect(scope.board['a3']).toBe('wP');
+      });
+    });
+
+  })
+
 });
