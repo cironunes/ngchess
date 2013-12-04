@@ -24,7 +24,7 @@ describe('Controller: MainCtrl', function () {
     chessboard = $compile(chessboard)(scope);
     scope.$digest();
 
-    spyOn(rootScope, '$emit');
+    spyOn(rootScope, '$emit').andCallThrough();
   }));
 
   it('#init', function () {
@@ -38,12 +38,11 @@ describe('Controller: MainCtrl', function () {
     var squares = chessboard[0].querySelectorAll('.chessboard__square');
 
     squares[48].click();
-
     expect(rootScope.$emit).toHaveBeenCalledWith('user:click', {row: '2', col: 'a'});
 
     squares[40].click();
     expect(rootScope.$emit).toHaveBeenCalledWith('user:click', {row: '3', col: 'a'});
 
-    // expect(scope.board['a3']).toBe('wP')
+    expect(scope.board['a3']).toBe('wP');
   });
 });
