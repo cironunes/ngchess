@@ -35,10 +35,13 @@ describe('Controller: MainCtrl', function () {
   });
 
   describe('click twice in squares', function() {
+    var squares
+    beforeEach(function() {
+      squares = chessboard[0].querySelectorAll('.chessboard__square');
+    });
+
     describe('different squares', function() {
       it('should move the piece on the board', function() {
-        var squares = chessboard[0].querySelectorAll('.chessboard__square');
-
         squares[48].click();
         expect(rootScope.$emit).toHaveBeenCalledWith('user:click', {row: '2', col: 'a'});
 
@@ -47,11 +50,16 @@ describe('Controller: MainCtrl', function () {
 
         expect(scope.board.a3).toBe('wP');
       });
+
+      it('should do nothing if the first square has no piece', function() {
+        squares[16].click();
+        squares[15].click();
+        expect(scope.board.h7).toBeDefined();
+      });
     });
 
     describe('same square', function() {
       it('should not clean the piece', function() {
-        var squares = chessboard[0].querySelectorAll('.chessboard__square');
         var expected = 0;
         squares[48].click();
         squares[48].click();
